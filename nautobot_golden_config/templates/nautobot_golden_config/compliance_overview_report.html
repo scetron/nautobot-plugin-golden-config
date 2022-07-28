@@ -46,7 +46,7 @@
                         <td>{% if device_aggr.compliants is not None %} {{ device_aggr.compliants }} {% else %} -- {% endif %}</td>
                         <td>{% if device_aggr.non_compliants is not None %} {{ device_aggr.non_compliants }} {% else %} -- {% endif %}</td>
                         <td>{% if device_aggr.comp_percents is not None %} {{ device_aggr.comp_percents }} % {% else %} -- {% endif %}</td>
-                        <td><img style="width:120px;" src= "data:image/png;base64,{{ device_visual|safe }}" ></td>
+                        <td>{% if device_visual is not None %}<img style="width:120px;" src= "data:image/png;base64,{{ device_visual|safe }}" >{% else %} -- {% endif %}</td>
                     </tr>
                         <tr class="even">
                         <td>Features</td>
@@ -54,7 +54,7 @@
                         <td>{% if feature_aggr.compliants is not None %} {{ feature_aggr.compliants }} {% else %} -- {% endif %}</td>
                         <td>{% if feature_aggr.non_compliants is not None %} {{ feature_aggr.non_compliants }} {% else %} -- {% endif %}</td>
                         <td>{% if feature_aggr.comp_percents is not None %} {{ feature_aggr.comp_percents }} % {% else %} -- {% endif %}</td>
-                        <td ><img style="width:120px;" src= "data:image/png;base64,{{ feature_visual|safe }}" ></td>
+                        <td>{% if feature_visual is not None %}<img style="width:120px;" src= "data:image/png;base64,{{ feature_visual|safe }}" >{% else %} -- {% endif %}</td>
                     </tr>
                 </tbody>
             </table>
